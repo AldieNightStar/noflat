@@ -15,5 +15,8 @@ G.Set("name", "Hello!")
 
 # SubGroups
 ```go
-
+G := nf.Group("people").Group("Ihor")
+G.Set("Name", "John")
+G.Set("SecondName", "Doe")
+G.Get("Age", "32")
 ```
