@@ -54,7 +54,7 @@ func (g *Group) SubGroup(k string) *Group {
 func (g *Group) Keys() []string {
 	arr := make([]string, 0, 8)
 	for _, key := range strings.Split(g.Get("#keys"), ";") {
-		if strings.HasPrefix(key, "#") {
+		if strings.Contains(key, "#") {
 			continue
 		}
 		arr = append(arr, key)

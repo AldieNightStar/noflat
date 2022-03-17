@@ -57,7 +57,16 @@ func TestKeys(t *testing.T) {
 	superG.Set("a", "c")
 	duperG.Set("x", "y")
 
-	if len(duperG.Keys()) != 1 || duperG.Keys()[0] != "x" {
-		t.Fatal("Keys in super group is bad")
+	superKeys := superG.Keys()
+	duperKeys := duperG.Keys()
+
+	if len(superKeys) != 2 {
+		t.Fatal("Keys for super group is bad")
+	}
+	if superKeys[0] != "a" || superKeys[1] != "duper_x" {
+		t.Fatal("Keys are wrong")
+	}
+	if len(duperKeys) != 1 {
+		t.Fatal("Keys in duper group is bad")
 	}
 }
